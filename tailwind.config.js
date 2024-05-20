@@ -23,7 +23,9 @@ module.exports = {
       colors: {
         'main-red-barn': '#864459',
         'seconday-light-blue': '#6BB9B2',
-        'light-pink': '#FFF9FF'
+        'light-pink': '#FFF9FF',
+        'dark-pink': '#F5ECEC',
+        beige: '#FFF5ED'
       },
       keyframes: {
         fadeIn: {

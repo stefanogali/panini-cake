@@ -1,6 +1,5 @@
 import { Carousel } from 'components/carousel';
 import Featuredproducts from 'components/layout/featured-products';
-import Footer from 'components/layout/footer';
 import Hero from 'components/layout/hero';
 import Promo from 'components/layout/promo';
 import { getCollectionProducts } from 'lib/shopify';
@@ -24,7 +23,7 @@ export default async function HomePage() {
       <Promo />
       {/* <ThreeItemGrid /> */}
       <Carousel />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

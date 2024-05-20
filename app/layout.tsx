@@ -1,4 +1,5 @@
 // import { GeistSans } from 'geist/font/sans';
+import Footer from 'components/layout/footer';
 import { ensureStartsWith } from 'lib/utils';
 import { Gochi_Hand, Jost } from 'next/font/google';
 import { ReactNode } from 'react';
@@ -45,6 +46,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         {/* <Navbar /> */}
         {/* <Header /> */}
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

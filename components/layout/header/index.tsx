@@ -1,13 +1,36 @@
+'use client';
+
+import clsx from 'clsx';
+import Link from 'next/link';
+
 import Grid from 'components/grid';
 import MainLogo from 'public/logo/logo';
 
-export default function Header() {
+export default function Header({ isInternalPage }: { isInternalPage?: boolean }) {
   return (
-    <header className="relative z-10 mx-auto pt-12">
-      <div className="flex flex-col items-center justify-center	">
-        <MainLogo width="10rem" height="9.3rem" />
-        <Grid className="mt-5 gap-x-8 rounded-full bg-main-red-barn bg-opacity-20 p-4 text-xl font-medium uppercase text-main-red-barn">
-          <Grid.Item className="cursor-pointer">About</Grid.Item>
+    <header className={clsx('relative z-10 mx-auto', !isInternalPage && 'pt-12')}>
+      <div
+        className={clsx(
+          'flex flex-col items-center justify-center',
+          isInternalPage && 'mb-[70px] bg-beige'
+        )}
+      >
+        <Link href="/">
+          <MainLogo
+            width="10rem"
+            height="9.3rem"
+            className={clsx(isInternalPage && 'max-h-32 max-w-32 pt-5')}
+          />
+        </Link>
+        <Grid
+          className={clsx(
+            'mt-5 gap-x-8 rounded-full bg-main-red-barn bg-opacity-20 p-4 text-xl font-medium uppercase text-main-red-barn',
+            isInternalPage && 'bg-transparent pt-0'
+          )}
+        >
+          <Link href="/about">
+            <Grid.Item className="cursor-pointer">About</Grid.Item>
+          </Link>
           <Grid.Item className="cursor-pointer">Our Products</Grid.Item>
           <Grid.Item className="cursor-pointer">Contact us</Grid.Item>
         </Grid>

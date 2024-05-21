@@ -13,7 +13,8 @@ module.exports = {
       '4xl': '2.441rem',
       '5xl': '3.052rem',
       'header-2': '2.5rem',
-      'header-3': '1.5rem'
+      'header-3': '1.5rem',
+      'header-4': '1.3rem'
     },
     extend: {
       fontFamily: {

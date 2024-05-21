@@ -12,6 +12,13 @@ export type Cart = Omit<ShopifyCart, 'lines'> & {
   lines: CartItem[];
 };
 
+export type Metafields = {
+  id: string;
+  value: string;
+  type: string;
+  key: string;
+};
+
 export type CartItem = {
   id: string;
   quantity: number;
@@ -59,6 +66,7 @@ export type Page = {
   seo?: SEO;
   createdAt: string;
   updatedAt: string;
+  metafields?: Metafields[];
 };
 
 export type Product = Omit<ShopifyProduct, 'variants' | 'images'> & {

@@ -6,8 +6,11 @@ import Link from 'next/link';
 export default function ProductGridItems({ products }: { products: Product[] }) {
   return (
     <>
-      {products.map((product) => (
-        <Grid.Item key={product.handle} className="animate-fadeIn">
+      {products.map((product, index) => (
+        <Grid.Item
+          key={product.handle}
+          className="aspect-square w-[calc(33.33%-20px)] animate-fadeIn"
+        >
           <Link className="relative inline-block h-full w-full" href={`/product/${product.handle}`}>
             <GridTileImage
               alt={product.title}
@@ -16,6 +19,7 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
                 amount: product.priceRange.maxVariantPrice.amount,
                 currencyCode: product.priceRange.maxVariantPrice.currencyCode
               }}
+              priority={index < 6 ? true : false}
               src={product.featuredImage?.url}
               fill
               sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"

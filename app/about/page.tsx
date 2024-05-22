@@ -27,7 +27,7 @@ export default async function Page() {
 
   if (!page) return notFound();
 
-  const chefsImgClassNames = 'mb-2.5 h-40 w-40 rounded-full border-8 border-seconday-light-blue';
+  const chefsImgClassNames = 'mb-2.5 h-40 w-40 rounded-full border-8 border-secondary-light-blue';
 
   const Chefs = () => (
     <>
@@ -65,13 +65,13 @@ export default async function Page() {
     <>
       <h1 className="mb-8 text-5xl font-bold">{page.title}</h1>
       <Prose className="mb-[70px]" html={page.body as string} />
-      <p className="text-sm italic">
-        {/* {`This document was last updated on ${new Intl.DateTimeFormat(undefined, {
+      {/* <p className="text-sm italic">
+        {`This document was last updated on ${new Intl.DateTimeFormat(undefined, {
           year: 'numeric',
           month: 'long',
           day: 'numeric'
-        }).format(new Date(page.updatedAt))}.`} */}
-      </p>
+        }).format(new Date(page.updatedAt))}.`} 
+      </p> */}
       <Chefs />
       {page.metafields && (
         <>

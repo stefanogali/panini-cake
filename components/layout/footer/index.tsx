@@ -63,7 +63,7 @@ export default function Footer() {
   );
 
   return (
-    <footer className="bg-beige pb-10 pt-12">
+    <footer className="mt-[70px] bg-beige pb-10 pt-12">
       <div className="container mx-auto flex max-w-[1140px] flex-col items-center">
         <div className="flex w-full justify-between">
           <CompanyAddress />

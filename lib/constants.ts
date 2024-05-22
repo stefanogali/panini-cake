@@ -9,7 +9,7 @@ export const defaultSort: SortFilterItem = {
   title: 'Relevance',
   slug: null,
   sortKey: 'RELEVANCE',
-  reverse: false
+  reverse: true
 };
 
 export const sorting: SortFilterItem[] = [

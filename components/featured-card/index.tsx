@@ -5,7 +5,7 @@ import { Product } from 'lib/shopify/types';
 
 export default function FeaturedCard({ product }: { product: Product }) {
   return (
-    <div className="mr-5 w-[28%] shrink-0 overflow-hidden rounded-xl bg-seconday-light-blue bg-opacity-50 pb-2.5 shadow-md last:mr-0">
+    <div className="mr-5 w-[28%] shrink-0 overflow-hidden rounded-xl bg-secondary-light-blue bg-opacity-50 pb-2.5 shadow-md last:mr-0">
       <div
         className="no-repat h-52 w-full items-center justify-center bg-cover bg-center"
         style={{

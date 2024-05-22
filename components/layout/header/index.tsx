@@ -1,5 +1,3 @@
-'use client';
-
 import clsx from 'clsx';
 import Link from 'next/link';
 
@@ -31,8 +29,12 @@ export default function Header({ isInternalPage }: { isInternalPage?: boolean })
           <Link href="/about">
             <Grid.Item className="cursor-pointer">About</Grid.Item>
           </Link>
-          <Grid.Item className="cursor-pointer">Our Products</Grid.Item>
-          <Grid.Item className="cursor-pointer">Contact us</Grid.Item>
+          <Link href="/products">
+            <Grid.Item className="cursor-pointer">Our Products</Grid.Item>
+          </Link>
+          <Link href="/contact">
+            <Grid.Item className="cursor-pointer">Contact us</Grid.Item>
+          </Link>
         </Grid>
       </div>
     </header>

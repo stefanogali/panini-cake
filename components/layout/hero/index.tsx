@@ -1,5 +1,6 @@
 import { Button } from 'components/button';
 import Image from 'next/image';
+import Link from 'next/link';
 import Arrow from 'public/arrow/arrow';
 import Header from '../header';
 
@@ -12,7 +13,9 @@ const HeroContent = () => {
           <h2 className="text-5xl  font-semibold leading-tight">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </h2>
-          <Button className="mt-8 ">Go to products</Button>
+          <Link href="/products">
+            <Button className="mt-8 ">Go to products</Button>
+          </Link>
         </div>
       </div>
     </div>

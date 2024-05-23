@@ -19,6 +19,11 @@ export type Metafields = {
   key: string;
 };
 
+export type MetafieldId = {
+  key: string;
+  namespace: string;
+};
+
 export type CartItem = {
   id: string;
   quantity: number;

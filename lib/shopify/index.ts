@@ -29,6 +29,7 @@ import {
   Connection,
   Image,
   Menu,
+  MetafieldId,
   Page,
   Product,
   ShopifyAddToCartOperation,
@@ -356,9 +357,12 @@ export async function getMenu(handle: string): Promise<Menu[]> {
   );
 }
 
-export async function getPage(handle: string): Promise<Page> {
+export async function getPage(handle: string, metafieldIds: MetafieldId[] = []): Promise<Page> {
+  // added query implementation here as needed to pass metafieldIds inside.
+  // todo: find a better solution
+
   const res = await shopifyFetch<ShopifyPageOperation>({
-    query: getPageQuery,
+    query: getPageQuery(metafieldIds),
     // commented out as it stops the build. Used revalidatePath in the layout instead.
     // cache: 'no-store',
     variables: { handle }

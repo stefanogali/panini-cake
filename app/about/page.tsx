@@ -21,7 +21,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const page = await getPage('about');
+  const metafields = [
+    { key: 'text', namespace: 'panini-cake' },
+    { key: 'text2', namespace: 'panini-cake' },
+    { key: 'multiple_text', namespace: 'panini-cake' }
+  ];
+  const page = await getPage('about', metafields);
 
   if (!page) return notFound();
 
@@ -82,7 +87,7 @@ export default async function Page() {
       <h1 className="mb-8 text-5xl font-bold">{page.title}</h1>
       <Prose className="mb-[70px]" html={page.body as string} />
       <Chefs />
-      {page.metafields && (
+      {page.metafields && page.metafields.length > 0 && (
         <>
           <h2 className="mb-8 text-header-2 font-semibold">Something else from metafields</h2>
           <Prose

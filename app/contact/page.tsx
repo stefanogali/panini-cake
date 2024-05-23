@@ -6,7 +6,12 @@ import { getPage } from 'lib/shopify';
 import { notFound } from 'next/navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = await getPage('contact');
+  const metafields = [
+    { key: 'text', namespace: 'panini-cake' },
+    { key: 'text2', namespace: 'panini-cake' },
+    { key: 'multiple_text', namespace: 'panini-cake' }
+  ];
+  const page = await getPage('contact', metafields);
 
   if (!page) return notFound();
 
@@ -22,7 +27,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const page = await getPage('contact');
+  const page = await getPage('contact', [
+    { key: 'text', namespace: 'panini-cake' },
+    { key: 'text2', namespace: 'panini-cake' },
+    { key: 'multiple_text', namespace: 'panini-cake' }
+  ]);
 
   //   console.log('page', page);
 
@@ -60,15 +69,7 @@ export default async function Page() {
       <Prose className="mb-[70px]" html={page.body as string} />
       <GoogleMapEmbed />
       <ContactForm />
-      {/* <p className="text-sm italic">
-        {`This document was last updated on ${new Intl.DateTimeFormat(undefined, {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        }).format(new Date(page.updatedAt))}.`}
-      </p> */}
-
-      {/* {page.metafields && (
+      {page.metafields && page.metafields.length > 0 && (
         <>
           <h2 className="mb-8 text-header-2 font-semibold">Something else from metafields</h2>
           <Prose
@@ -81,7 +82,7 @@ export default async function Page() {
             }
           />{' '}
         </>
-      )} */}
+      )}
     </>
   );
 }

@@ -34,8 +34,8 @@ export default function Promo() {
       <div>
         <Image
           src="/promo/special-cake.png"
-          width={446}
-          height={446}
+          width="446"
+          height="445"
           alt="Choco cake promotional"
         />
       </div>

@@ -8,7 +8,14 @@ const HeroContent = () => {
   return (
     <div className="container relative z-10 mx-auto max-w-[1140px]">
       <div className="mx-auto flex items-center justify-between">
-        <Image src="/hero/hero-cake.png" width={400} height={520} alt="Cake" className="max-w-80" />
+        <Image
+          src="/hero/hero-cake.png"
+          width={400}
+          height={520}
+          alt="Cake"
+          className="max-w-80"
+          priority
+        />
         <div className="flex max-w-2xl flex-col items-start">
           <h2 className="text-5xl  font-semibold leading-tight">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.

@@ -1,8 +1,9 @@
-// import { GeistSans } from 'geist/font/sans';
+import Cart from 'components/cart';
+import OpenCart from 'components/cart/open-cart';
 import Footer from 'components/layout/footer';
 import { ensureStartsWith } from 'lib/utils';
 import { Gochi_Hand, Jost } from 'next/font/google';
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 import './globals.css';
 
 const jost = Jost({ subsets: ['latin'], variable: '--main-font' });
@@ -45,7 +46,15 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body className="leading-[2em] text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
         {/* <Navbar /> */}
         {/* <Header /> */}
-        <main>{children}</main>
+        <main>
+          {' '}
+          <div className="fixed right-20 top-20 z-50">
+            <Suspense fallback={<OpenCart />}>
+              <Cart />
+            </Suspense>
+          </div>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

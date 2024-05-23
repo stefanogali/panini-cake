@@ -1,6 +1,4 @@
 import Header from 'components/layout/header';
-import FilterList from 'components/layout/search/filter';
-import { sorting } from 'lib/constants';
 
 export default function SearchLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -11,9 +9,9 @@ export default function SearchLayout({ children }: { children: React.ReactNode }
           <Collections />
         </div> */}
         <div className="order-last min-h-screen w-full md:order-none">{children}</div>
-        <div className="order-none flex-none md:order-last md:w-[125px]">
+        {/* <div className="order-none flex-none md:order-last md:w-[125px]">
           <FilterList list={sorting} title="Sort by" />
-        </div>
+        </div> */}
       </div>
     </>
   );

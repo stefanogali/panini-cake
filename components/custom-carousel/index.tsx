@@ -64,7 +64,7 @@ export default function CustomCarousel({
   return (
     <div
       className={clsx(
-        'outer-scroller-div relative flex cursor-pointer select-none overflow-y-hidden overflow-x-scroll transition-all will-change-transform',
+        'outer-scroller-div relative flex w-full select-none gap-5 overflow-y-hidden overflow-x-scroll transition-all will-change-transform',
         className
       )}
       ref={slider}

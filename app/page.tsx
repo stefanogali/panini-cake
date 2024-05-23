@@ -1,4 +1,3 @@
-import { Carousel } from 'components/carousel';
 import Featuredproducts from 'components/layout/featured-products';
 import Hero from 'components/layout/hero';
 import Promo from 'components/layout/promo';
@@ -22,7 +21,7 @@ export default async function HomePage() {
       <Featuredproducts products={featuredProductsHome} />
       <Promo />
       {/* <ThreeItemGrid /> */}
-      <Carousel />
+      {/* <Carousel /> */}
       {/* <Footer /> */}
     </>
   );

@@ -1,7 +1,11 @@
 import Grid from 'components/grid';
 import ProductGridItems from 'components/layout/product-grid-items';
+import FilterList from 'components/layout/search/filter';
+import Search, { SearchSkeleton } from 'components/search-product';
 import { defaultSort, sorting } from 'lib/constants';
+
 import { getProducts } from 'lib/shopify';
+import { Suspense } from 'react';
 
 export const metadata = {
   title: 'Search',
@@ -16,14 +20,19 @@ export default async function SearchPage({
   const { sort, q: searchValue } = searchParams as { [key: string]: string };
   const { sortKey, reverse } = sorting.find((item) => item.slug === sort) || defaultSort;
 
-  console.log('searchParams', searchParams);
-
   const products = await getProducts({ sortKey, reverse, query: searchValue });
 
   const resultsText = products.length > 1 ? 'results' : 'result';
 
   return (
     <>
+      <div className="mb-2.5 flex justify-between">
+        <Suspense fallback={<SearchSkeleton />}>
+          <Search />
+        </Suspense>
+        <FilterList list={sorting} />
+      </div>
+
       {searchValue ? (
         <p className="mb-4">
           {products.length === 0
@@ -33,7 +42,7 @@ export default async function SearchPage({
         </p>
       ) : null}
       {products.length > 0 ? (
-        <Grid className="flex-wrap gap-5">
+        <Grid className="flex-wrap justify-between gap-5">
           <ProductGridItems products={products} />
         </Grid>
       ) : null}

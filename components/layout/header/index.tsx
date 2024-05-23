@@ -22,7 +22,7 @@ export default function Header({ isInternalPage }: { isInternalPage?: boolean })
         </Link>
         <Grid
           className={clsx(
-            'mt-5 gap-x-8 rounded-full bg-main-red-barn bg-opacity-20 p-4 text-xl font-medium uppercase text-main-red-barn',
+            'mt-5 gap-x-8 rounded-full bg-main-red-barn bg-opacity-20 p-2.5 text-xl font-medium uppercase text-main-red-barn',
             isInternalPage && 'bg-transparent pt-0'
           )}
         >

@@ -294,7 +294,8 @@ export async function getCollectionProducts({
   const res = await shopifyFetch<ShopifyCollectionProductsOperation>({
     query: getCollectionProductsQuery,
     tags: [TAGS.collections, TAGS.products],
-    cache: 'no-store',
+    // commented out as it stops the build. Used revalidatePath in the layout instead.
+    // cache: 'no-store',
     variables: {
       handle: collection,
       reverse,
@@ -358,7 +359,8 @@ export async function getMenu(handle: string): Promise<Menu[]> {
 export async function getPage(handle: string): Promise<Page> {
   const res = await shopifyFetch<ShopifyPageOperation>({
     query: getPageQuery,
-    cache: 'no-store',
+    // commented out as it stops the build. Used revalidatePath in the layout instead.
+    // cache: 'no-store',
     variables: { handle }
   });
 
@@ -409,7 +411,8 @@ export async function getProducts({
 }): Promise<Product[]> {
   const res = await shopifyFetch<ShopifyProductsOperation>({
     query: getProductsQuery,
-    cache: 'no-store',
+    // commented out as it stops the build. Used revalidatePath in the layout instead.
+    // cache: 'no-store',
     tags: [TAGS.products],
     variables: {
       query,

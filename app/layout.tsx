@@ -2,6 +2,7 @@ import Cart from 'components/cart';
 import OpenCart from 'components/cart/open-cart';
 import Footer from 'components/layout/footer';
 import { ensureStartsWith } from 'lib/utils';
+import { revalidatePath } from 'next/cache';
 import { Gochi_Hand, Jost } from 'next/font/google';
 import { ReactNode, Suspense } from 'react';
 import './globals.css';
@@ -41,6 +42,8 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
+  //revalidate fecthes the data from the server and updates the cache. It should be global since layout is used through all the app.
+  revalidatePath('/', 'layout');
   return (
     <html lang="en" className={`${jost.className} ${gochiHand.variable}`}>
       <body className="leading-[2em] text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">

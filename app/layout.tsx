@@ -44,10 +44,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html lang="en" className={`${jost.className} ${gochiHand.variable}`}>
       <body className="leading-[2em] text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
-        {/* <Navbar /> */}
-        {/* <Header /> */}
         <main>
-          {' '}
           <div className="fixed right-20 top-20 z-50">
             <Suspense fallback={<OpenCart />}>
               <Cart />

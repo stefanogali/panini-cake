@@ -32,7 +32,7 @@ const HeroContent = () => {
 const ArrowBounce = () => {
   return (
     <div className="absolute bottom-5 left-1/2 -translate-x-1/2 animate-bounce rounded-full bg-secondary-light-blue p-4 text-center">
-      <Arrow width="1.2rem" height="1.2rem" className="rotate-90"></Arrow>
+      <Arrow width="1.2rem" height="1.2rem" fill="#FFFFFF" className="rotate-90"></Arrow>
     </div>
   );
 };

@@ -16,7 +16,9 @@ export default function FeaturedCard({ product }: { product: Product }) {
         }}
       ></div>
       <div className="p-4">
-        <h2 className="font-gochi-hand text-4xl font-semibold text-white">{product.title}</h2>
+        <h2 className="font-gochi-hand text-4xl font-semibold text-main-red-barn">
+          {product.title}
+        </h2>
         <p className="text-base leading-none text-white">
           {product.description.substring(0, 90)}...
         </p>

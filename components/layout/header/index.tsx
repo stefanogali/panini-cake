@@ -10,7 +10,7 @@ export default function Header({ isInternalPage }: { isInternalPage?: boolean })
       <div
         className={clsx(
           'flex flex-col items-center justify-center',
-          isInternalPage && 'mb-[70px] bg-beige'
+          isInternalPage && 'mb-[70px] bg-light-pink'
         )}
       >
         <Link href="/">

@@ -31,7 +31,7 @@ export default function Footer() {
         <input
           type="email"
           placeholder="Your Email"
-          className="w-full rounded-full bg-dark-pink  py-2.5 pl-5"
+          className="w-full rounded-full bg-[#ffefef]  py-2.5 pl-5"
         />
         <Button className="absolute right-0 bg-white px-[10px]">
           <SendNewsletterBtn width="30px" height="30px" />
@@ -63,7 +63,7 @@ export default function Footer() {
   );
 
   return (
-    <footer className="mt-[70px] bg-beige pb-10 pt-12">
+    <footer className="mt-[70px] bg-light-pink pb-10 pt-12">
       <div className="container mx-auto flex max-w-[1140px] flex-col items-center">
         <div className="flex w-full justify-between">
           <CompanyAddress />

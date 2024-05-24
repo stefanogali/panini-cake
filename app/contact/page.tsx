@@ -6,11 +6,7 @@ import { getPage } from 'lib/shopify';
 import { notFound } from 'next/navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metafields = [
-    { key: 'text', namespace: 'panini-cake' },
-    { key: 'text2', namespace: 'panini-cake' },
-    { key: 'multiple_text', namespace: 'panini-cake' }
-  ];
+  const metafields = [{ key: 'multiple_text_contact', namespace: 'panini-cake' }];
   const page = await getPage('contact', metafields);
 
   if (!page) return notFound();
@@ -27,13 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const page = await getPage('contact', [
-    { key: 'text', namespace: 'panini-cake' },
-    { key: 'text2', namespace: 'panini-cake' },
-    { key: 'multiple_text', namespace: 'panini-cake' }
-  ]);
-
-  //   console.log('page', page);
+  const metafields = [{ key: 'multiple_text_contact', namespace: 'panini-cake' }];
+  const page = await getPage('contact', metafields);
 
   if (!page) return notFound();
 
@@ -69,20 +60,21 @@ export default async function Page() {
       <Prose className="mb-[70px]" html={page.body as string} />
       <GoogleMapEmbed />
       <ContactForm />
-      {page.metafields && page.metafields.length > 0 && (
-        <>
-          <h2 className="mb-8 text-header-2 font-semibold">Something else from metafields</h2>
-          <Prose
-            className="mb-[70px]"
-            html={
-              page.metafields?.filter((metafield) => metafield?.key === 'multiple_text').length > 0
-                ? (page.metafields.filter((metafield) => metafield?.key === 'multiple_text')[0]
-                    ?.value as string)
-                : ''
-            }
-          />{' '}
-        </>
-      )}
+      {page.metafields &&
+        page.metafields?.filter((metafield) => metafield?.key === 'multiple_text_contact').length >
+          0 && (
+          <>
+            <h2 className="mb-8 text-header-2 font-semibold">Something else from metafields</h2>
+            <Prose
+              className="mb-[70px]"
+              html={
+                page.metafields?.filter(
+                  (metafield) => metafield?.key === 'multiple_text_contact'
+                )[0]?.value as string
+              }
+            />
+          </>
+        )}
     </>
   );
 }

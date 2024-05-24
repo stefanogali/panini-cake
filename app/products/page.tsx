@@ -1,7 +1,7 @@
 import Grid from 'components/grid';
 import ProductGridItems from 'components/layout/product-grid-items';
 import FilterList from 'components/layout/search/filter';
-import Search, { SearchSkeleton } from 'components/search-product';
+import Search from 'components/search-product';
 import { defaultSort, sorting } from 'lib/constants';
 
 import { getProducts } from 'lib/shopify';
@@ -12,14 +12,14 @@ export const metadata = {
   description: 'Search for products in the store.'
 };
 
-export default async function SearchPage({
+export default async function ProductsPage({
   searchParams
 }: {
   searchParams?: { [key: string]: string | string[] | undefined };
 }) {
   const { sort, q: searchValue } = searchParams as { [key: string]: string };
   const { sortKey, reverse } = sorting.find((item) => item.slug === sort) || defaultSort;
-
+  console.log('before fecting products');
   const products = await getProducts({ sortKey, reverse, query: searchValue });
 
   const resultsText = products.length > 1 ? 'results' : 'result';
@@ -27,7 +27,7 @@ export default async function SearchPage({
   return (
     <>
       <div className="mb-2.5 flex justify-between">
-        <Suspense fallback={<SearchSkeleton />}>
+        <Suspense fallback={<h1>...oadlsks</h1>}>
           <Search />
         </Suspense>
         <FilterList list={sorting} />
@@ -42,7 +42,7 @@ export default async function SearchPage({
         </p>
       ) : null}
       {products.length > 0 ? (
-        <Grid className="flex-wrap justify-between gap-5">
+        <Grid className="flex-wrap gap-5">
           <ProductGridItems products={products} />
         </Grid>
       ) : null}

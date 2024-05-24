@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function Page() {
+export default async function AboutPage() {
   const metafields = [
     { key: 'chef_1_bio', namespace: 'panini-cake' },
     { key: 'chef_2_bio', namespace: 'panini-cake' },

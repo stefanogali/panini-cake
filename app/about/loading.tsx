@@ -1,3 +1,5 @@
+import PageSkeleton from 'components/page-skeleton';
+
 export default function Loading() {
-  return <h1>...loading</h1>;
+  return <PageSkeleton repeater={8} />;
 }

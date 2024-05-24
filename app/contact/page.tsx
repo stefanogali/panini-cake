@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function Page() {
+export default async function ContactPage() {
   const metafields = [{ key: 'multiple_text_contact', namespace: 'panini-cake' }];
   const page = await getPage('contact', metafields);
 

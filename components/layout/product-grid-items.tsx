@@ -1,15 +1,16 @@
 import Grid from 'components/grid';
 import { GridTileImage } from 'components/grid/tile';
 import { Product } from 'lib/shopify/types';
+import { imagePlaceholder } from 'lib/utils';
 import Link from 'next/link';
 
 export default function ProductGridItems({ products }: { products: Product[] }) {
   return (
     <>
-      {products.map((product, index) => (
+      {products.map((product) => (
         <Grid.Item
           key={product.handle}
-          className="aspect-square w-[calc(33.33%-20px)] animate-fadeIn"
+          className="aspect-square w-[calc(33.33%-13.3px)] animate-fadeIn"
         >
           <Link className="relative inline-block h-full w-full" href={`/product/${product.handle}`}>
             <GridTileImage
@@ -19,7 +20,7 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
                 amount: product.priceRange.maxVariantPrice.amount,
                 currencyCode: product.priceRange.maxVariantPrice.currencyCode
               }}
-              priority={index < 6 ? true : false}
+              placeholder={`data:image/svg+xml;base64,${imagePlaceholder(358, 358)}`}
               src={product.featuredImage?.url}
               fill
               sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"

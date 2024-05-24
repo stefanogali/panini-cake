@@ -31,7 +31,7 @@ export default function Footer() {
         <input
           type="email"
           placeholder="Your Email"
-          className="w-full rounded-full bg-[#ffefef]  py-2.5 pl-5"
+          className="w-full rounded-full bg-[#ffefef]  py-2.5 pl-5 outline-none"
         />
         <Button className="absolute right-0 bg-white px-[10px]">
           <SendNewsletterBtn width="30px" height="30px" />
@@ -45,7 +45,7 @@ export default function Footer() {
   );
 
   const PaymentLogos = () => (
-    <div className="flex items-center gap-5 border-b-4 border-white pb-[1.8rem]">
+    <div className="flex items-center gap-5">
       <Visa />
       <Mastercard />
       <AmericanExpress />
@@ -56,9 +56,9 @@ export default function Footer() {
 
   const SocialIcons = () => (
     <div className="flex items-center gap-5 pt-[1.8rem]">
-      <Facebook />
-      <Instagram />
-      <Tiktok />
+      <Facebook className="max-w-[1.8rem]" />
+      <Instagram className="max-w-[1.8rem]" />
+      <Tiktok className="max-w-[1.8rem]" />
     </div>
   );
 

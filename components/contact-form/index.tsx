@@ -10,7 +10,7 @@ export default function ContactForm() {
 
   return (
     <div className="mb-[70px]">
-      <h2 className="mb-8 text-header-2 font-semibold">The form</h2>
+      <h2 className="mb-8 text-header-2 font-semibold leading-none">The form</h2>
       <p className="leading-7">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
         voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati

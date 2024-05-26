@@ -12,8 +12,8 @@ import MainLogo from 'public/logo/logo';
 
 export default function Footer() {
   const CompanyAddress = () => (
-    <div>
-      <MainLogo width="93px" height="88px" />
+    <div className="pt-[1.87rem] text-center sm:pt-0 sm:text-left">
+      <MainLogo width="93px" height="88px" className="mx-auto sm:mx-0" />
       <div className="mt-2.5 leading-tight">
         <p>12190 Beahan Street</p>
         <p>59025</p>
@@ -25,9 +25,9 @@ export default function Footer() {
   );
 
   const Newsletter = () => (
-    <div className="flex max-w-96 flex-col items-end pt-[2rem]">
-      <h3 className="text-right text-header-3 font-semibold">Join our newsletter</h3>
-      <form className="relative mt-5 flex min-w-72 items-center ">
+    <div className="flex max-w-96 flex-col items-center sm:items-end sm:pt-[2rem]">
+      <h3 className="text-center text-header-3 font-semibold sm:text-right">Join our newsletter</h3>
+      <form className="relative mt-5 flex w-full max-w-72 items-center ">
         <input
           type="email"
           placeholder="Your Email"
@@ -37,7 +37,7 @@ export default function Footer() {
           <SendNewsletterBtn width="30px" height="30px" />
         </Button>
       </form>
-      <p className="pt-2.5 text-right leading-tight">
+      <p className="pt-2.5 text-center leading-tight sm:text-right">
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
         laudantium
       </p>
@@ -45,7 +45,7 @@ export default function Footer() {
   );
 
   const PaymentLogos = () => (
-    <div className="flex items-center gap-5">
+    <div className="flex flex-wrap items-center justify-center gap-5">
       <Visa />
       <Mastercard />
       <AmericanExpress />
@@ -65,7 +65,7 @@ export default function Footer() {
   return (
     <footer className="mt-[70px] bg-light-pink pb-10 pt-12">
       <div className="container mx-auto flex max-w-[1140px] flex-col items-center px-2.5">
-        <div className="flex w-full justify-between">
+        <div className="flex w-full flex-col-reverse items-center justify-center sm:flex-row sm:items-start sm:justify-between">
           <CompanyAddress />
           <Newsletter />
         </div>

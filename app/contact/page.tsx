@@ -30,7 +30,7 @@ export default async function ContactPage() {
 
   const GoogleMapEmbed = () => (
     <div className="mb-[70px] leading-7">
-      <h2 className="mb-8 text-header-2 font-semibold">Find us</h2>
+      <h2 className="mb-8 text-header-2 font-semibold leading-none">Find us</h2>
       <p className="leading-7">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
         voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
@@ -64,7 +64,9 @@ export default async function ContactPage() {
         page.metafields?.filter((metafield) => metafield?.key === 'multiple_text_contact').length >
           0 && (
           <>
-            <h2 className="mb-8 text-header-2 font-semibold">Something else from metafields</h2>
+            <h2 className="mb-8 text-header-2 font-semibold leading-none">
+              Something else from metafields
+            </h2>
             <Prose
               className="mb-[70px]"
               html={

@@ -10,7 +10,7 @@ export default function Promo() {
   return (
     <section className="container mx-auto my-[70px] flex max-w-[1140px] items-center justify-between px-2.5">
       <div>
-        <h2 className="mb-8 text-header-2 font-semibold">Only the best ingredients</h2>
+        <h2 className="mb-8 text-header-2 font-semibold leading-none">Only the best ingredients</h2>
         <Grid className="flex flex-col">
           <Grid.Item className="mb-5 flex items-center">
             <Egg className="mr-2.5 w-10" />
@@ -31,7 +31,7 @@ export default function Promo() {
         </Grid>
         <Button className="mt-7">Find out more</Button>
       </div>
-      <div>
+      <div className="hidden md:block">
         <Image
           src="/promo/special-cake.png"
           width="446"

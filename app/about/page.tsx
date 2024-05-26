@@ -48,7 +48,7 @@ export default async function AboutPage() {
   const Chefs = ({ chefsBio }: { chefsBio: Metafields[] }) => {
     return (
       <>
-        <h2 className="mb-8 text-header-2 font-semibold">Our chefs</h2>
+        <h2 className="mb-8 text-header-2 font-semibold leading-none">Our chefs</h2>
         <div className="mb-[70px] flex justify-between leading-7">
           <div className="basis-[31%]">
             <Image
@@ -97,7 +97,9 @@ export default async function AboutPage() {
         page.metafields?.filter((metafield) => metafield?.key === 'multiple_text_about').length >
           0 && (
           <>
-            <h2 className="mb-8 text-header-2 font-semibold">Something else from metafields</h2>
+            <h2 className="mb-8 text-header-2 font-semibold leading-none">
+              Something else from metafields
+            </h2>
             <Prose
               className="mb-[70px]"
               html={

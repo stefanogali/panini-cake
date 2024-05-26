@@ -14,7 +14,7 @@
 
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
   img[loading='lazy'] {
-    clippath: inset(0.6px);
+    clip-path: inset(0.6px);
   }
 }
 
@@ -24,4 +24,12 @@
 }
 .outer-scroller-div::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
+}
+
+.unselectable {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }

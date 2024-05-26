@@ -80,7 +80,7 @@ export default async function ProductPage({ params }: { params: { handle: string
         }}
       />
       <div className="w-full">
-        <div className="flex flex-col rounded-lg lg:flex-row">
+        <div className="flex flex-col rounded-lg px-2.5 md:flex-row">
           <div className="h-full w-full basis-full lg:basis-4/6">
             <Suspense
               fallback={
@@ -96,7 +96,7 @@ export default async function ProductPage({ params }: { params: { handle: string
             </Suspense>
           </div>
 
-          <div className="basis-full lg:basis-2/6">
+          <div className="basis-full md:pl-2.5 lg:basis-2/6">
             <ProductDescription product={product} />
           </div>
         </div>
@@ -112,13 +112,16 @@ async function RelatedProducts({ id }: { id: string }) {
   if (!relatedProducts.length) return null;
 
   return (
-    <div className="py-8">
+    <div className="py-8 pl-2.5">
       <h2 className="mb-4 text-2xl font-bold">Related Products</h2>
       <ul className="flex w-full gap-4 overflow-x-auto pt-1">
         <CustomCarousel>
           {relatedProducts.map((product) => (
-            <li key={product.handle} className="aspect-square w-[28%] shrink-0">
-              <Link className="relative h-full w-full" href={`/product/${product.handle}`}>
+            <li key={product.handle} className="aspect-square w-3/5 shrink-0 sm:w-2/5 lg:w-[28%]">
+              <Link
+                className="unselectable relative h-full w-full"
+                href={`/product/${product.handle}`}
+              >
                 <GridTileImage
                   alt={product.title}
                   label={{

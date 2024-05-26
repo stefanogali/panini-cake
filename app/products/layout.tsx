@@ -4,7 +4,7 @@ export default function SearchLayout({ children }: { children: React.ReactNode }
   return (
     <>
       <Header isInternalPage />
-      <div className="container mx-auto flex max-w-[1140px]">
+      <div className="container mx-auto flex max-w-[1140px] px-2.5">
         {/* <div className="order-first w-full flex-none md:max-w-[125px]">
           <Collections />
         </div> */}

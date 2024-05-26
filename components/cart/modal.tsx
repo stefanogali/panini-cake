@@ -64,7 +64,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-[390px] flex-col border-l border-neutral-200 bg-white  p-6 backdrop-blur-xl">
+            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full max-w-[90%] flex-col border-l border-neutral-200 bg-white  p-6 backdrop-blur-xl sm:max-w-[390px]">
               <div className="flex items-center justify-between">
                 <p className="text-lg font-semibold">My Cart</p>
 
@@ -79,8 +79,8 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                   <p className="mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
                 </div>
               ) : (
-                <div className="flex h-full flex-col justify-between overflow-hidden p-1">
-                  <ul className="flex-grow overflow-auto py-4">
+                <div className="flex h-full flex-col justify-between overflow-auto p-1">
+                  <ul className="flex-grow py-4">
                     {cart.lines.map((item, i) => {
                       const merchandiseSearchParams = {} as MerchandiseSearchParams;
 

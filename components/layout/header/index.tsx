@@ -6,7 +6,7 @@ import MainLogo from 'public/logo/logo';
 
 export default function Header({ isInternalPage }: { isInternalPage?: boolean }) {
   return (
-    <header className={clsx('relative z-10 mx-auto', !isInternalPage && 'md:pt-12')}>
+    <header className={clsx('relative z-10 mx-auto', !isInternalPage && 'lg:pt-12')}>
       <div
         className={clsx(
           'flex flex-col items-center justify-center',

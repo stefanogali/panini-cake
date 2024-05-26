@@ -47,7 +47,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <html lang="en" className={`${jost.className} ${gochiHand.variable}`}>
       <body className="leading-[2em] text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
         <main>
-          <div className="fixed right-20 top-20 z-50">
+          <div className="fixed right-20 top-20 z-50 hidden lg:block">
             <Cart />
           </div>
           {children}

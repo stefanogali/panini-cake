@@ -6,7 +6,7 @@ import MainLogo from 'public/logo/logo';
 
 export default function Header({ isInternalPage }: { isInternalPage?: boolean }) {
   return (
-    <header className={clsx('relative z-10 mx-auto', !isInternalPage && 'pt-12')}>
+    <header className={clsx('relative z-10 mx-auto', !isInternalPage && 'md:pt-12')}>
       <div
         className={clsx(
           'flex flex-col items-center justify-center',
@@ -17,12 +17,15 @@ export default function Header({ isInternalPage }: { isInternalPage?: boolean })
           <MainLogo
             width="10rem"
             height="9.3rem"
-            className={clsx(isInternalPage && 'max-h-32 max-w-32 pt-5')}
+            className={clsx(
+              'max-w-[5.5rem] md:max-w-[7.5rem] lg:max-w-none',
+              isInternalPage && 'max-h-32 max-w-32 pt-5'
+            )}
           />
         </Link>
         <Grid
           className={clsx(
-            'mt-5 gap-x-8 rounded-full bg-main-red-barn bg-opacity-20 p-2.5 text-xl font-medium uppercase text-main-red-barn',
+            'mt-5 hidden gap-x-8 rounded-full bg-main-red-barn bg-opacity-20 p-2.5 text-xl font-medium uppercase text-main-red-barn lg:flex',
             isInternalPage && 'bg-transparent pt-0'
           )}
         >

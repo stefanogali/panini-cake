@@ -8,7 +8,7 @@ import Van from 'public/icons/van';
 
 export default function Promo() {
   return (
-    <section className="container mx-auto my-[70px] flex max-w-[1140px] items-center justify-between">
+    <section className="container mx-auto my-[70px] flex max-w-[1140px] items-center justify-between px-2.5">
       <div>
         <h2 className="mb-8 text-header-2 font-semibold">Only the best ingredients</h2>
         <Grid className="flex flex-col">

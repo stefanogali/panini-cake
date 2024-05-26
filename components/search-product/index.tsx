@@ -31,7 +31,6 @@ export default function Search() {
       }
     }
 
-    console.log('onsubmit and create url');
     router.push(createUrl('/products', newParams));
   }
 

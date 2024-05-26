@@ -64,7 +64,7 @@ export default function Footer() {
 
   return (
     <footer className="mt-[70px] bg-light-pink pb-10 pt-12">
-      <div className="container mx-auto flex max-w-[1140px] flex-col items-center">
+      <div className="container mx-auto flex max-w-[1140px] flex-col items-center px-2.5">
         <div className="flex w-full justify-between">
           <CompanyAddress />
           <Newsletter />

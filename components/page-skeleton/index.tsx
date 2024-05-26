@@ -6,9 +6,9 @@ export default function PageSkeleton({ repeater = 1 }: { repeater?: number }) {
         const isEven = index % 2 === 0;
         const isMultipleOfFour = index % 4 === 0 && index !== 0;
         return (
-          <>
+          <div key={index}>
             {isMultipleOfFour && <div className="mb-8 h-8 max-w-40 rounded bg-slate-200"></div>}
-            <div key={index} className="mb-7 flex space-x-4">
+            <div className="mb-7 flex space-x-4">
               <div className="flex-1 space-y-4 py-1">
                 <div className="h-2 rounded bg-slate-200"></div>
                 <div className="space-y-3">
@@ -24,7 +24,7 @@ export default function PageSkeleton({ repeater = 1 }: { repeater?: number }) {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         );
       })}
     </div>

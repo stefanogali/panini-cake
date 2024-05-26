@@ -43,14 +43,15 @@ export default async function AboutPage() {
   const chefsBio =
     page.metafields?.filter((metafield) => chefBioFields.includes(metafield?.key)) || [];
 
-  const chefsImgClassNames = 'mb-2.5 h-40 w-40 rounded-full border-8 border-[#fff0dd]';
+  const chefsImgClassNames =
+    'mb-2.5 h-35 w-35 sm:h-40 sm:w-40 rounded-full border-8 border-[#fff0dd]';
 
   const Chefs = ({ chefsBio }: { chefsBio: Metafields[] }) => {
     return (
       <>
         <h2 className="mb-8 text-header-2 font-semibold leading-none">Our chefs</h2>
-        <div className="mb-[70px] flex justify-between leading-7">
-          <div className="basis-[31%]">
+        <div className="mb-[70px] flex flex-wrap justify-between leading-7">
+          <div className="basis-[48%] sm:basis-[31%]">
             <Image
               src="/about/chef-1.png"
               alt="Chef 1"
@@ -61,7 +62,7 @@ export default async function AboutPage() {
             <h4 className="text-header-4 font-semibold">James Red</h4>
             <p>{chefsBio[0]?.value}</p>
           </div>
-          <div className="basis-[31%]">
+          <div className="basis-[48%] sm:basis-[31%]">
             <Image
               src="/about/chef-2.png"
               alt="Chef 2"
@@ -72,7 +73,7 @@ export default async function AboutPage() {
             <h4 className="text-header-4 font-semibold">Mark Black</h4>
             <p>{chefsBio[1]?.value}</p>
           </div>
-          <div className="basis-[31%]">
+          <div className="mt-5 basis-[48%] sm:mt-0 sm:basis-[31%]">
             <Image
               src="/about/chef-3.png"
               alt="Chef 3"

@@ -8,7 +8,7 @@ export default function FeaturedCard({ product }: { product: Product }) {
   const router = useRouter();
 
   return (
-    <div className="w-[28%] shrink-0 cursor-grab overflow-hidden rounded-xl bg-secondary-light-blue bg-opacity-50 pb-2.5 shadow-md last:mr-0">
+    <div className="w-3/5 shrink-0 cursor-grab overflow-hidden rounded-xl bg-secondary-light-blue bg-opacity-50 pb-2.5 shadow-md last:mr-0 sm:w-2/5 lg:w-[28%]">
       <div
         className="no-repat h-52 w-full items-center justify-center bg-cover bg-center"
         style={{

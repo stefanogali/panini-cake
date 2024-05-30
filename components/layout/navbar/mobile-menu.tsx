@@ -1,19 +1,26 @@
 'use client';
 
 import { Dialog, Transition } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, ShoppingCartIcon } from '@heroicons/react/24/outline';
+import CloseCart from 'components/cart/close-cart';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { Fragment, Suspense, useEffect, useState } from 'react';
+import { Fragment, Suspense, useContext, useEffect, useState } from 'react';
+import { CartContext } from 'store/cart-context';
 import Search, { SearchSkeleton } from './search';
 
 export default function MobileMenu({ menu }: { menu: Menu[] }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const cartContext = useContext(CartContext);
   const [isOpen, setIsOpen] = useState(false);
   const openMobileMenu = () => setIsOpen(true);
   const closeMobileMenu = () => setIsOpen(false);
+  const clickHandler = () => {
+    setIsOpen(false);
+    cartContext.setIsOpen(true);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -60,15 +67,17 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-[100%]"
           >
-            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full max-w-[90%] flex-col bg-white pb-6 sm:max-w-[70%]  md:max-w-[50%]">
-              <div className="p-4">
-                <button
-                  className="mb-4 flex h-11 w-11 items-center justify-center "
-                  onClick={closeMobileMenu}
-                  aria-label="Close mobile menu"
-                >
-                  <XMarkIcon className="h-10  stroke-secondary-light-blue" />
-                </button>
+            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full max-w-[90%] flex-col overflow-auto bg-white sm:max-w-[70%] md:max-w-[50%]">
+              <div className="p-6">
+                <div className="mb-5 flex justify-end">
+                  <button
+                    className="mb-4 flex h-11 w-11 items-center justify-center "
+                    onClick={closeMobileMenu}
+                    aria-label="Close mobile menu"
+                  >
+                    <CloseCart />
+                  </button>
+                </div>
 
                 <div className="mb-4 w-full">
                   <Suspense fallback={<SearchSkeleton />}>
@@ -89,6 +98,12 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                     ))}
                   </ul>
                 ) : null}
+              </div>
+              <div
+                className="mt-auto flex w-full cursor-pointer justify-center bg-secondary-light-blue py-2"
+                onClick={clickHandler}
+              >
+                <ShoppingCartIcon className="h-8 stroke-white" />
               </div>
             </Dialog.Panel>
           </Transition.Child>

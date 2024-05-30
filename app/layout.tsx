@@ -1,4 +1,5 @@
 import Cart from 'components/cart';
+import Providers from 'components/layout/context-providers';
 import Footer from 'components/layout/footer';
 import MobileMenu from 'components/layout/navbar/mobile-menu';
 import { getMenu } from 'lib/shopify';
@@ -51,18 +52,20 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html lang="en" className={`${jost.className} ${gochiHand.variable}`}>
       <body className="leading-[2em] text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
-        <main>
-          <div className="fixed right-2.5 top-16 z-50 lg:right-20 lg:top-20">
-            <div className="hidden lg:block">
-              <Cart />
+        <Providers>
+          <main>
+            <div className="fixed right-2.5 top-16 z-50 lg:right-20 lg:top-20">
+              <div className="hidden lg:block">
+                <Cart />
+              </div>
+              <div className="block lg:hidden">
+                <MobileMenu menu={menu} />
+              </div>
             </div>
-            <div className="block lg:hidden">
-              <MobileMenu menu={menu} />
-            </div>
-          </div>
-          {children}
-        </main>
-        <Footer />
+            {children}
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

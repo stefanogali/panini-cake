@@ -1,10 +1,13 @@
 import clsx from 'clsx';
-import Link from 'next/link';
-
 import Grid from 'components/grid';
+import { getMenu } from 'lib/shopify';
+import { Menu } from 'lib/shopify/types';
+import Link from 'next/link';
 import MainLogo from 'public/logo/logo';
 
-export default function Header({ isInternalPage }: { isInternalPage?: boolean }) {
+export default async function Header({ isInternalPage }: { isInternalPage?: boolean }) {
+  const menu = await getMenu('main-menu');
+
   return (
     <header className={clsx('relative z-10 mx-auto', !isInternalPage && 'lg:pt-12')}>
       <div
@@ -23,22 +26,20 @@ export default function Header({ isInternalPage }: { isInternalPage?: boolean })
             )}
           />
         </Link>
-        <Grid
-          className={clsx(
-            'mt-5 hidden gap-x-8 rounded-full bg-main-red-barn bg-opacity-20 p-2.5 text-xl font-medium uppercase text-main-red-barn lg:flex',
-            isInternalPage && 'bg-transparent pt-0'
-          )}
-        >
-          <Link href="/about">
-            <Grid.Item className="cursor-pointer">About</Grid.Item>
-          </Link>
-          <Link href="/products">
-            <Grid.Item className="cursor-pointer">Our Products</Grid.Item>
-          </Link>
-          <Link href="/contact">
-            <Grid.Item className="cursor-pointer">Contact us</Grid.Item>
-          </Link>
-        </Grid>
+        {menu.length ? (
+          <Grid
+            className={clsx(
+              'mt-5 hidden gap-x-8 rounded-full bg-main-red-barn bg-opacity-20 px-5 py-2.5 text-xl font-medium uppercase text-main-red-barn lg:flex',
+              isInternalPage && 'bg-transparent pt-0'
+            )}
+          >
+            {menu.map((item: Menu) => (
+              <Link key={item.title} href={item.path}>
+                <Grid.Item className="cursor-pointer">{item.title}</Grid.Item>
+              </Link>
+            ))}
+          </Grid>
+        ) : null}
       </div>
     </header>
   );

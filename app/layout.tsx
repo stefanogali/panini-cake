@@ -54,7 +54,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body className="leading-[2em] text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
         <Providers>
           <main>
-            <div className="fixed right-2.5 top-16 z-50 lg:right-20 lg:top-20">
+            <div className="fixed right-2.5 top-12 z-50 lg:right-20 lg:top-20">
               <div className="hidden lg:block">
                 <Cart />
               </div>

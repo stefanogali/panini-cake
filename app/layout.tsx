@@ -48,7 +48,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   revalidatePath('/', 'layout');
 
   // Get menu from shopify
-  const menu = await getMenu('main-menu');
+  const { MAIN_MENU_NAME } = process.env;
+  const menu = await getMenu(MAIN_MENU_NAME || '');
   return (
     <html lang="en" className={`${jost.className} ${gochiHand.variable}`}>
       <body className="leading-[2em] text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">

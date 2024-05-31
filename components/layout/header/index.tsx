@@ -6,7 +6,9 @@ import Link from 'next/link';
 import MainLogo from 'public/logo/logo';
 
 export default async function Header({ isInternalPage }: { isInternalPage?: boolean }) {
-  const menu = await getMenu('main-menu');
+  // Get menu from shopify
+  const { MAIN_MENU_NAME } = process.env;
+  const menu = await getMenu(MAIN_MENU_NAME || '');
 
   return (
     <header className={clsx('relative z-10 mx-auto', !isInternalPage && 'lg:pt-12')}>

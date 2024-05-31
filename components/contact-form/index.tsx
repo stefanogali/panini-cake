@@ -2,6 +2,20 @@
 
 import { Button } from 'components/button';
 
+const Input = ({ label, id, type = 'text' }: { label: string; id: string; type?: string }) => (
+  <div className="flex flex-col">
+    <label className="block text-sm font-medium" htmlFor={id}>
+      {label}
+    </label>
+    <input
+      className="sm:leading-0 text-xs block w-full rounded-md border-[1px] bg-transparent px-2.5 py-1 text-gray-900 shadow-none placeholder:text-gray-400 focus:outline-none"
+      type={type}
+      name={id}
+      id={id}
+    />
+  </div>
+);
+
 export default function ContactForm() {
   const formHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -18,35 +32,15 @@ export default function ContactForm() {
       </p>
       <form className="w-full" onSubmit={formHandler}>
         <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium" htmlFor="name">
-              Your Name
-            </label>
-            <input
-              className="sm:leading-0 text-xs block w-full rounded-md border-[1px] bg-transparent px-2.5 py-1 shadow-none placeholder:text-gray-400 focus:outline-none"
-              type="text"
-              name="name"
-              id="name"
-            />
-          </div>
-          <div className="flex flex-col">
-            <label className="block text-sm font-medium" htmlFor="email">
-              Your Email
-            </label>
-            <input
-              className="sm:leading-0 text-xs block w-full rounded-md border-[1px] bg-transparent  px-2.5 py-1 text-gray-900 shadow-none placeholder:text-gray-400 focus:outline-none"
-              type="text"
-              name="email"
-              id="email"
-            />
-          </div>
+          <Input label="Your Name" id="name" />
+          <Input label="Your Email" id="email" type="email" />
         </div>
         <div>
           <label className="lock text-sm font-medium" htmlFor="message">
             Your message
           </label>
           <textarea
-            className="sm:leading-0 text-xs block w-full resize-none rounded-md border-[1px] bg-transparent  px-2.5 py-1 text-gray-900 shadow-none placeholder:text-gray-400 focus:outline-none"
+            className="sm:leading-0 text-xs block w-full resize-none rounded-md border-[1px] bg-transparent px-2.5 py-1 text-gray-900 shadow-none placeholder:text-gray-400 focus:outline-none"
             id="message"
             rows={8}
           ></textarea>

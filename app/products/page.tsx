@@ -3,9 +3,7 @@ import ProductGridItems from 'components/layout/product-grid-items';
 import FilterList from 'components/layout/search/filter';
 import Search from 'components/search-product';
 import { defaultSort, sorting } from 'lib/constants';
-
 import { getProducts } from 'lib/shopify';
-import { Suspense } from 'react';
 
 export const metadata = {
   title: 'Search',
@@ -27,9 +25,7 @@ export default async function ProductsPage({
   return (
     <>
       <div className="mb-2.5 flex justify-between">
-        <Suspense fallback={<h1>...oadlsks</h1>}>
-          <Search />
-        </Suspense>
+        <Search />
         <FilterList list={sorting} />
       </div>
 

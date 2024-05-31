@@ -1,11 +1,11 @@
 'use client';
-
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import clsx from 'clsx';
 import { createUrl } from 'lib/utils';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useRef } from 'react';
 
-export default function Search() {
+export default function Search({ isFullWidth }: { isFullWidth?: boolean }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -39,7 +39,10 @@ export default function Search() {
   };
 
   return (
-    <form onSubmit={onSubmit} className="relative w-full max-w-72">
+    <form
+      onSubmit={onSubmit}
+      className={clsx('relative w-full max-w-72', { 'max-w-none': isFullWidth })}
+    >
       <input
         ref={inputRef}
         key={searchParams?.get('q')}

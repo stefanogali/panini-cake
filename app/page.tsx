@@ -4,7 +4,9 @@ import Promo from 'components/layout/promo';
 import { getCollectionProducts } from 'lib/shopify';
 
 export const metadata = {
-  description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
+  title: 'Free Next.js Ecommerce template using Shopify headless integration',
+  description:
+    'High-performance ecommerce store built with Next.js, Vercel, and Shopify. Clone or fork this template to build your own ecommerce store.',
   openGraph: {
     type: 'website'
   }

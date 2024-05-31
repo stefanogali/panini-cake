@@ -81,7 +81,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
 
                 <div className="mb-4 w-full">
                   <Suspense fallback={<SearchSkeleton />}>
-                    <Search />
+                    <Search isFullWidth />
                   </Suspense>
                 </div>
                 {menu.length ? (

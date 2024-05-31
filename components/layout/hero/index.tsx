@@ -9,7 +9,7 @@ const HeroContent = () => {
     <div className="container relative z-10 mx-auto max-w-[1140px]">
       <div className="mx-auto flex flex-col items-center justify-between md:flex-row">
         <Image
-          src="/hero/hero-cake.png"
+          src="/hero/hero-cake.webp"
           width={400}
           height={520}
           alt="Cake"

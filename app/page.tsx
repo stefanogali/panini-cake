@@ -10,9 +10,11 @@ export const metadata = {
   }
 };
 
+const { FEATURED_PRODUCT_SLUG } = process.env;
+
 export default async function HomePage() {
   const featuredProductsHome = await getCollectionProducts({
-    collection: 'special-cakes',
+    collection: FEATURED_PRODUCT_SLUG || '',
     reverse: true
   });
   return (
@@ -20,9 +22,6 @@ export default async function HomePage() {
       <Hero />
       <Featuredproducts products={featuredProductsHome} />
       <Promo />
-      {/* <ThreeItemGrid /> */}
-      {/* <Carousel /> */}
-      {/* <Footer /> */}
     </>
   );
 }

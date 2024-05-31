@@ -24,7 +24,7 @@ export function GridTileImage({
         {
           relative: label,
           'border-2 border-blue-600': active,
-          'border-neutral-200 dark:border-neutral-800': !active
+          'border-neutral-200': !active
         }
       )}
     >

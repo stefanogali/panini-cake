@@ -52,7 +52,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const menu = await getMenu(MAIN_MENU_NAME || '');
   return (
     <html lang="en" className={`${jost.className} ${gochiHand.variable}`}>
-      <body className="leading-[2em] text-black dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+      <body className="leading-[2em] text-black">
         <Providers>
           <main>
             <div className="fixed right-2.5 top-12 z-50 lg:right-20 lg:top-20">

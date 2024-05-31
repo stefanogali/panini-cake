@@ -356,7 +356,7 @@ export async function getMenu(handle: string): Promise<Menu[]> {
         .replace(domain, '')
         .replace('/collections', '/search')
         .replace('/pages', '')
-        .replace('/search/all', 'products')
+        .replace('/search/all', '/products')
     })) || []
   );
 }

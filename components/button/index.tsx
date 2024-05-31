@@ -1,10 +1,5 @@
 import clsx from 'clsx';
 
-// type ButtonProps = {
-//   children: React.ReactNode;
-//   className?: string;
-// };
-
 export function Button(props: React.ComponentProps<'button'>) {
   return (
     <button

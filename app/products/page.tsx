@@ -1,6 +1,6 @@
 import Grid from 'components/grid';
 import ProductGridItems from 'components/layout/product-grid-items';
-import FilterList from 'components/layout/search/filter';
+import FilterList from 'components/layout/products-filter/filter';
 import Search from 'components/search-product';
 import { defaultSort, sorting } from 'lib/constants';
 import { getProducts } from 'lib/shopify';

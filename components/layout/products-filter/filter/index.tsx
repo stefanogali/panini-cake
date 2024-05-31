@@ -10,11 +10,9 @@ export default function FilterList({ list, title }: { list: ListItem[]; title?: 
     <>
       <nav className="flex">
         {title ? <h4 className="mr-2.5">{title}</h4> : null}
-        <ul className="">
-          <Suspense fallback={'...loading'}>
-            <FilterItemDropdown list={list} />
-          </Suspense>
-        </ul>
+        <Suspense fallback={'...loading'}>
+          <FilterItemDropdown list={list} />
+        </Suspense>
       </nav>
     </>
   );

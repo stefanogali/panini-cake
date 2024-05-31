@@ -3,12 +3,12 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Bars3Icon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 import CloseCart from 'components/cart/close-cart';
+import Search, { SearchSkeleton } from 'components/search-product';
 import { Menu } from 'lib/shopify/types';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { Fragment, Suspense, useContext, useEffect, useState } from 'react';
 import { CartContext } from 'store/cart-context';
-import Search, { SearchSkeleton } from './search';
 
 export default function MobileMenu({ menu }: { menu: Menu[] }) {
   const pathname = usePathname();

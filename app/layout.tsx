@@ -1,7 +1,7 @@
 import Cart from 'components/cart';
 import Providers from 'components/layout/context-providers';
 import Footer from 'components/layout/footer';
-import MobileMenu from 'components/layout/navbar/mobile-menu';
+import MobileMenu from 'components/layout/mobile-menu';
 import { getMenu } from 'lib/shopify';
 import { ensureStartsWith } from 'lib/utils';
 import { revalidatePath } from 'next/cache';

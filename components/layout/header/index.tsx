@@ -23,7 +23,7 @@ export default async function Header({ isInternalPage }: { isInternalPage?: bool
             width="10rem"
             height="9.3rem"
             className={clsx(
-              'max-w-[6.5rem] md:max-w-[7.5rem] lg:max-w-none',
+              'hidden lg:block lg:max-w-none',
               isInternalPage && 'my-1 max-h-32 max-w-32'
             )}
           />

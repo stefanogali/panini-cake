@@ -6,7 +6,7 @@ import Header from '../header';
 
 const HeroContent = () => {
   return (
-    <div className="container relative z-10 mx-auto max-w-[1140px]">
+    <div className="container relative z-10 mx-auto max-w-[1140px] pt-10 lg:pt-0">
       <div className="mx-auto flex flex-col items-center justify-between md:flex-row">
         <Image
           src="/hero/hero-cake.webp"

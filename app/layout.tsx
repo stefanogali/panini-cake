@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import Cart from 'components/cart';
 import Providers from 'components/layout/context-providers';
 import Footer from 'components/layout/footer';
@@ -6,6 +8,8 @@ import { getMenu } from 'lib/shopify';
 import { ensureStartsWith } from 'lib/utils';
 import { revalidatePath } from 'next/cache';
 import { Gochi_Hand, Jost } from 'next/font/google';
+import Link from 'next/link';
+import MainLogo from 'public/logo/logo';
 import { ReactNode } from 'react';
 import './globals.css';
 
@@ -57,12 +61,15 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       </head>
       <body className="leading-[2em] text-black dark:bg-white">
         <Providers>
-          <main>
-            <div className="fixed right-2.5 top-12 z-50 lg:right-20 lg:top-20">
-              <div className="hidden lg:block">
+          <main className="pt-20 lg:pt-0">
+            <div className="fixed top-0 z-50 flex w-full justify-end">
+              <div className="hidden pr-16 pt-16 lg:inline-block">
                 <Cart />
               </div>
-              <div className="block lg:hidden">
+              <div className="flex w-full items-center justify-between bg-light-pink p-2.5 lg:hidden">
+                <Link href="/">
+                  <MainLogo width="80px" height="75px" className={clsx('max-w-[5rem]')} />
+                </Link>
                 <MobileMenu menu={menu} />
               </div>
             </div>

@@ -4,6 +4,7 @@
 
 :root {
   --font-sans: ${sans.style.fontFamily};
+  color-scheme: light only;
 }
 
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {

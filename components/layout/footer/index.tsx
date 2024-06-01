@@ -33,7 +33,7 @@ export default function Footer() {
           placeholder="Your Email"
           className="w-full rounded-full bg-[#ffefef]  py-2.5 pl-5 outline-none"
         />
-        <Button className="absolute right-0 bg-white px-[10px]">
+        <Button className="absolute right-0 bg-white px-[10px]" aria-label="Newsletter">
           <SendNewsletterBtn width="30px" height="30px" />
         </Button>
       </form>

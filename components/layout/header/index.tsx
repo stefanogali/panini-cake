@@ -22,6 +22,7 @@ export default async function Header({ isInternalPage }: { isInternalPage?: bool
           <MainLogo
             width="10rem"
             height="9.3rem"
+            aria-label="Logo"
             className={clsx(
               'hidden lg:block lg:max-w-none',
               isInternalPage && 'my-1 max-h-32 max-w-32'

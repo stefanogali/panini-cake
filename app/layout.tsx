@@ -68,7 +68,12 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
               </div>
               <div className="flex w-full items-center justify-between bg-light-pink p-2.5 lg:hidden">
                 <Link href="/">
-                  <MainLogo width="80px" height="75px" className={clsx('max-w-[5rem]')} />
+                  <MainLogo
+                    width="80px"
+                    height="75px"
+                    aria-label="Logo"
+                    className={clsx('max-w-[5rem]')}
+                  />
                 </Link>
                 <MobileMenu menu={menu} />
               </div>

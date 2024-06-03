@@ -9,7 +9,7 @@ The live project can be found at [https://panini-cake.vercel.app/](https://panin
 
 A Next.js 14 and App Router-ready ecommerce template featuring:
 
-- Shopfy Storefront API
+- Shopify Storefront API
 - Next.js App Router
 - Optimized for SEO using Next.js's Metadata
 - React Server Components (RSCs) and Suspense
@@ -68,9 +68,9 @@ npm run dev
 
 and the app should be running on your local with no errors.
 
-Add the products on your shopify admin dashboard, and create your pages (this template only has _about_ and _contact_ pages at the momnet, but you can add yours).
+Add the products on your shopify admin dashboard, and create your pages (this template only has _about_ and _contact_ pages at the moment, but you can add yours).
 
-For the featured products you will need to create new entries under your product collections on Shopify admin. Do not forger to change your FEATURED_PRODUCT_SLUG .env variable.
+For the Featured Products you will need to create new entries under your product collections on Shopify admin. Do not forger to change your FEATURED_PRODUCT_SLUG .env variable.
 
 The current menu name is _main-menu_, but you can give any name in your Shopify admin and change the .env variable accordingly.
 
@@ -79,4 +79,4 @@ The current menu name is _main-menu_, but you can give any name in your Shopify 
 This template also supports custom fields if you wish to add your own extra sections for pages and products, directly editable from your Shopify dashboard.
 
 Go to the [Shopify app store](https://apps.shopify.com/) and add ACF: Metafields Custom Fields. Start creating your custom metafields.
-Currently this theme supports metafileds on the _about_ and _contacts_ pages, you can specify what you want to retrieve in the metafields array inside those pages.
+Currently this theme supports metafields on the _about_ and _contacts_ pages, you can specify what you want to retrieve in the metafields array inside those pages.

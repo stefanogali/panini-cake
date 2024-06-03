@@ -8,7 +8,7 @@ type Route = {
 };
 
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
-  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  ? `https://panini-cake.vercel.app`
   : 'http://localhost:3000';
 
 export const dynamic = 'force-dynamic';

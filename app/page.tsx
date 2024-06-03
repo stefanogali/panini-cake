@@ -9,6 +9,9 @@ export const metadata = {
     'High-performance ecommerce store built with Next.js, Vercel, and Shopify. Clone or fork this template to build your own ecommerce store.',
   openGraph: {
     type: 'website'
+  },
+  verification: {
+    google: 'ephPAYWfbfSOHHWnGeqEHiOPuxTXr300eIzTmT2oJcY'
   }
 };
 

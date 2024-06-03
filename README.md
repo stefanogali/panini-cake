@@ -1,7 +1,8 @@
-# Next.js + Headless Shopify E-Commerce Template
+# [Next.js + Headless Shopify E-Commerce Template](https://panini-cake.vercel.app/)
 
 This is a Next.Js + Typescript + Tailwindcss + headless Shopify free starter template.
 This project is based on [Next.js Commerce starter template](https://github.com/vercel/commerce).
+
 The live project can be found at [https://panini-cake.vercel.app/](https://panini-cake.vercel.app/)
 
 ![Hero Image](/public/template/screenshot.png?raw=true 'Panini Cake Shop hero')
@@ -46,7 +47,7 @@ FEATURED_PRODUCT_SLUG="special-cakes"
 MAIN_MENU_NAME="main-menu"
 ```
 
-Got to the [Shopify Partner website](https://www.shopify.com/uk/partners) and create a free account, you will then be able to create a free development store. If you never used Shopify, please familiarize a bit with the admin dashboard.
+Got to the [Shopify Partner website](https://www.shopify.com/uk/partners) and create a free account, you will then be able to create a free development store.
 
 Once you are done, go to settings and find the apps section, then head to the [Shopify app store](https://apps.shopify.com/) and install the Headless app.
 
@@ -57,7 +58,7 @@ SHOPIFY_REVALIDATION_SECRET="XXXXXXXXXXXXXXXXX"
 SHOPIFY_STOREFRONT_ACCESS_TOKEN="XXXXXXXXXXXXXXXXX"
 ```
 
-Once replaced you can run
+Once replaced, you can run
 
 ```bash
 npm run dev
@@ -71,11 +72,11 @@ For the featured products you will need to create new entries under your product
 
 The current menu name is main-menu, but you can give any name in your Shopify admin and change the .env variable accordingly.
 
-### Metafields
+## Metafields
 
 This template also supports custom fields if you wish to add your own extra sections for pages and products, directly editable from your Shopify dashboard.
 
 Go to the [Shopify app store](https://apps.shopify.com/) and add ACF: Metafields Custom Fields. Familiarize yourself with it a bit.
 
 Once you are done start creating your custom metafields.
-Curently this theme supports metafileds on the about and contacts pages, you can specify what you want to retrieve in the metafields array inside those pages.
+Currently this theme supports metafileds on the about and contacts pages, you can specify what you want to retrieve in the metafields array inside those pages.

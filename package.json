@@ -26,9 +26,9 @@
     "@heroicons/react": "^2.1.3",
     "clsx": "^2.1.0",
     "geist": "^1.3.0",
-    "next": "14.2.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "next": "^14.2.12",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
@@ -39,7 +39,7 @@
     "@vercel/git-hooks": "^1.0.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.2",
+    "eslint-config-next": "^14.2.12",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-unicorn": "^52.0.0",
     "lint-staged": "^15.2.2",

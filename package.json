@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "cross-spawn": ">=7.0.5",
+    "nanoid": ">=3.3.8",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.12",
     "@types/node": "20.12.7",

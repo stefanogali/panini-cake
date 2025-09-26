@@ -25,13 +25,13 @@ export default function Footer() {
   );
 
   const Newsletter = () => (
-    <div className="flex max-w-96 flex-col items-center sm:items-end sm:pt-[2rem]">
-      <h3 className="text-center text-header-3 font-semibold sm:text-right">Join our newsletter</h3>
-      <form className="relative mt-5 flex w-full max-w-72 items-center ">
+    <div className="flex max-w-96 flex-col items-center sm:items-end sm:pt-8">
+      <h3 className="text-header-3 text-center font-semibold sm:text-right">Join our newsletter</h3>
+      <form className="relative mt-5 flex w-full max-w-72 items-center">
         <input
           type="email"
           placeholder="Your Email"
-          className="w-full rounded-full bg-[#ffefef]  py-2.5 pl-5 outline-none"
+          className="w-full rounded-full bg-[#ffefef] py-2.5 pl-5 outline-hidden"
         />
         <Button className="absolute right-0 bg-white px-[10px]" aria-label="Newsletter">
           <SendNewsletterBtn width="30px" height="30px" />
@@ -63,13 +63,13 @@ export default function Footer() {
   );
 
   return (
-    <footer className="mt-[70px] bg-light-pink pb-10 pt-12">
+    <footer className="bg-light-pink mt-[70px] pt-12 pb-10">
       <div className="container mx-auto flex max-w-[1140px] flex-col items-center px-2.5">
         <div className="flex w-full flex-col-reverse items-center justify-center sm:flex-row sm:items-start sm:justify-between">
           <CompanyAddress />
           <Newsletter />
         </div>
-        <div className="mt-[4.3rem] flex w-full flex-col items-center justify-center ">
+        <div className="mt-[4.3rem] flex w-full flex-col items-center justify-center">
           <PaymentLogos />
           <SocialIcons />
         </div>

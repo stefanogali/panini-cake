@@ -8,7 +8,7 @@ export default function FeaturedCard({ product }: { product: Product }) {
   const router = useRouter();
 
   return (
-    <div className="w-3/5 shrink-0 cursor-grab overflow-hidden rounded-xl bg-secondary-light-blue bg-opacity-50 pb-2.5 shadow-md last:mr-0 sm:w-2/5 lg:w-[28%]">
+    <div className="bg-secondary-light-blue/50 w-3/5 shrink-0 cursor-grab overflow-hidden rounded-xl pb-2.5 shadow-md last:mr-0 sm:w-2/5 lg:w-[28%]">
       <div
         className="no-repat h-52 w-full items-center justify-center bg-cover bg-center"
         style={{
@@ -16,7 +16,7 @@ export default function FeaturedCard({ product }: { product: Product }) {
         }}
       ></div>
       <div className="p-4">
-        <h2 className="font-gochi-hand text-4xl font-semibold text-main-red-barn">
+        <h2 className="font-gochi-hand text-main-red-barn text-4xl font-semibold">
           {product.title}
         </h2>
         <p className="text-base leading-none text-white">

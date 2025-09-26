@@ -65,7 +65,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full max-w-[90%] flex-col border-l border-neutral-200 bg-white  p-6 backdrop-blur-xl sm:max-w-[390px]">
+            <Dialog.Panel className="fixed top-0 right-0 bottom-0 flex h-full w-full max-w-[90%] flex-col border-l border-neutral-200 bg-white p-6 backdrop-blur-xl sm:max-w-[390px]">
               <div className="flex items-center justify-between">
                 <p className="text-lg font-semibold">My Cart</p>
 
@@ -81,7 +81,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                 </div>
               ) : (
                 <div className="flex h-full flex-col justify-between overflow-auto p-1">
-                  <ul className="flex-grow py-4">
+                  <ul className="grow py-4">
                     {cart.lines.map((item, i) => {
                       const merchandiseSearchParams = {} as MerchandiseSearchParams;
 
@@ -159,11 +159,11 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                         currencyCode={cart.cost.totalTaxAmount.currencyCode}
                       />
                     </div>
-                    <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1">
+                    <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pt-1 pb-1">
                       <p>Shipping</p>
                       <p className="text-right">Calculated at checkout</p>
                     </div>
-                    <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1">
+                    <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pt-1 pb-1">
                       <p>Total</p>
                       <Price
                         className="text-right text-base text-black"
@@ -174,7 +174,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
                   </div>
                   <a
                     href={cart.checkoutUrl}
-                    className="block w-full rounded-full bg-main-red-barn p-3 text-center text-sm leading-none text-white opacity-90 hover:opacity-100"
+                    className="bg-main-red-barn block w-full rounded-full p-3 text-center text-sm leading-none text-white opacity-90 hover:opacity-100"
                   >
                     Proceed to Checkout
                   </a>

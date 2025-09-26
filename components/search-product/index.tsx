@@ -51,10 +51,10 @@ export default function Search({ isFullWidth }: { isFullWidth?: boolean }) {
         placeholder="Search for products..."
         autoComplete="off"
         defaultValue={searchParams?.get('q') || ''}
-        className="w-full rounded border border-black/30 bg-white px-4 py-1.5 text-sm leading-none text-black placeholder:text-neutral-500"
+        className="w-full rounded-sm border border-black/30 bg-white px-4 py-1.5 text-sm leading-none text-black placeholder:text-neutral-500"
       />
       <div
-        className="absolute right-0 top-0 flex h-full cursor-pointer items-center rounded-r bg-main-red-barn px-2"
+        className="bg-main-red-barn absolute top-0 right-0 flex h-full cursor-pointer items-center rounded-r px-2"
         onClick={handleClick}
       >
         <MagnifyingGlassIcon className="h-4 stroke-white" />
@@ -70,7 +70,7 @@ export function SearchSkeleton() {
         placeholder="Search for products..."
         className="w-full rounded-lg border bg-white px-4 py-2 text-sm text-black placeholder:text-neutral-500"
       />
-      <div className="absolute right-0 top-0 mr-3 flex h-full items-center">
+      <div className="absolute top-0 right-0 mr-3 flex h-full items-center">
         <MagnifyingGlassIcon className="h-4 stroke-white" />
       </div>
     </form>

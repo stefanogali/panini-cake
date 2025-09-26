@@ -15,7 +15,7 @@ export default async function Header({ isInternalPage }: { isInternalPage?: bool
       <div
         className={clsx(
           'flex flex-col items-center justify-center',
-          isInternalPage && 'mb-[70px] bg-light-pink'
+          isInternalPage && 'bg-light-pink mb-[70px]'
         )}
       >
         <Link href="/">
@@ -32,7 +32,7 @@ export default async function Header({ isInternalPage }: { isInternalPage?: bool
         {menu.length ? (
           <Grid
             className={clsx(
-              'mt-5 hidden gap-x-8 rounded-full bg-main-red-barn bg-opacity-20 px-5 py-2.5 text-xl font-medium uppercase text-main-red-barn lg:flex',
+              'bg-main-red-barn/20 text-main-red-barn mt-5 hidden gap-x-8 rounded-full px-5 py-2.5 text-xl font-medium uppercase lg:flex',
               isInternalPage && 'bg-transparent pt-0'
             )}
           >

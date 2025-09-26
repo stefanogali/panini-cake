@@ -43,7 +43,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
         aria-label="Open mobile menu"
         className="ml-auto flex h-11 w-11 items-center justify-center lg:hidden"
       >
-        <Bars3Icon className="h-10 rounded-md border border-slate-50 bg-white stroke-secondary-light-blue p-1" />
+        <Bars3Icon className="stroke-secondary-light-blue h-10 rounded-md border border-slate-50 bg-white p-1" />
       </button>
       <Transition show={isOpen}>
         <Dialog onClose={closeMobileMenu} className="relative z-50">
@@ -61,17 +61,17 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
           <Transition.Child
             as={Fragment}
             enter="transition-all ease-in-out duration-300"
-            enterFrom="translate-x-[100%]"
+            enterFrom="translate-x-full"
             enterTo="translate-x-0"
             leave="transition-all ease-in-out duration-200"
             leaveFrom="translate-x-0"
-            leaveTo="translate-x-[100%]"
+            leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full max-w-[90%] flex-col overflow-auto bg-white sm:max-w-[70%] md:max-w-[50%]">
+            <Dialog.Panel className="fixed top-0 right-0 bottom-0 flex h-full w-full max-w-[90%] flex-col overflow-auto bg-white sm:max-w-[70%] md:max-w-[50%]">
               <div className="p-6">
                 <div className="mb-5 flex justify-end">
                   <button
-                    className="mb-4 flex h-11 w-11 items-center justify-center "
+                    className="mb-4 flex h-11 w-11 items-center justify-center"
                     onClick={closeMobileMenu}
                     aria-label="Close mobile menu"
                   >
@@ -89,7 +89,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                     <ul className="flex w-full flex-col">
                       {menu.map((item: Menu) => (
                         <li
-                          className="py-2 text-xl text-black transition-colors hover:text-main-red-barn"
+                          className="hover:text-main-red-barn py-2 text-xl text-black transition-colors"
                           key={item.title}
                         >
                           <Link href={item.path} onClick={closeMobileMenu}>
@@ -102,7 +102,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                 ) : null}
               </div>
               <div
-                className="mt-auto flex w-full cursor-pointer justify-center bg-secondary-light-blue py-2"
+                className="bg-secondary-light-blue mt-auto flex w-full cursor-pointer justify-center py-2"
                 onClick={clickHandler}
               >
                 <ShoppingCartIcon className="h-8 stroke-white" />

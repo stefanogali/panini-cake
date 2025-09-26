@@ -8,7 +8,7 @@ const Input = ({ label, id, type = 'text' }: { label: string; id: string; type?:
       {label}
     </label>
     <input
-      className="sm:leading-0 text-xs block w-full rounded-md border-[1px] bg-transparent px-2.5 py-1 text-gray-900 shadow-none placeholder:text-gray-400 focus:outline-none"
+      className="block w-full rounded-md border bg-transparent px-2.5 py-1 text-xs text-gray-900 shadow-none placeholder:text-gray-400 focus:outline-hidden sm:leading-0"
       type={type}
       name={id}
       id={id}
@@ -24,7 +24,7 @@ export default function ContactForm() {
 
   return (
     <div className="mb-[70px]">
-      <h2 className="mb-8 text-header-2 font-semibold leading-none">The form</h2>
+      <h2 className="text-header-2 mb-8 leading-none font-semibold">The form</h2>
       <p className="leading-7">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
         voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
@@ -40,7 +40,7 @@ export default function ContactForm() {
             Your message
           </label>
           <textarea
-            className="sm:leading-0 text-xs block w-full resize-none rounded-md border-[1px] bg-transparent px-2.5 py-1 text-gray-900 shadow-none placeholder:text-gray-400 focus:outline-none"
+            className="block w-full resize-none rounded-md border bg-transparent px-2.5 py-1 text-xs text-gray-900 shadow-none placeholder:text-gray-400 focus:outline-hidden"
             id="message"
             rows={8}
           ></textarea>

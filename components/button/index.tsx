@@ -5,7 +5,7 @@ export function Button(props: React.ComponentProps<'button'>) {
     <button
       {...props}
       className={clsx(
-        'rounded-full bg-main-red-barn px-[1.87rem] py-[0.63rem] leading-none text-white',
+        'bg-main-red-barn cursor-pointer rounded-full px-[1.87rem] py-[0.63rem] leading-none text-white',
         props.className
       )}
     >

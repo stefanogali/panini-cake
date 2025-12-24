@@ -40,7 +40,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
 
   return (
     <>
-      <button aria-label="Open cart" onClick={openCart}>
+      <button aria-label="Open cart" onClick={openCart} className="cursor-pointer">
         <OpenCart quantity={cart?.totalQuantity} className="stroke-white" />
       </button>
       <Transition show={isOpen}>
@@ -69,7 +69,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
               <div className="flex items-center justify-between">
                 <p className="text-lg font-semibold">My Cart</p>
 
-                <button aria-label="Close cart" onClick={closeCart}>
+                <button aria-label="Close cart" onClick={closeCart} className="cursor-pointer">
                   <CloseCart />
                 </button>
               </div>

@@ -41,7 +41,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
       <button
         onClick={openMobileMenu}
         aria-label="Open mobile menu"
-        className="ml-auto flex h-11 w-11 items-center justify-center lg:hidden"
+        className="ml-auto flex h-11 w-11 cursor-pointer items-center justify-center lg:hidden"
       >
         <Bars3Icon className="stroke-secondary-light-blue h-10 rounded-md border border-slate-50 bg-white p-1" />
       </button>
@@ -71,7 +71,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
               <div className="p-6">
                 <div className="mb-5 flex justify-end">
                   <button
-                    className="mb-4 flex h-11 w-11 items-center justify-center"
+                    className="mb-4 flex h-11 w-11 cursor-pointer items-center justify-center"
                     onClick={closeMobileMenu}
                     aria-label="Close mobile menu"
                   >

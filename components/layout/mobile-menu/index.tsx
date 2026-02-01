@@ -21,7 +21,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
     setIsOpen(false);
     cartContext.setIsOpen(true);
   };
-  // rebuild
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {

@@ -4,6 +4,7 @@ import FilterList from 'components/layout/products-filter/filter';
 import Search from 'components/search-product';
 import { defaultSort, sorting } from 'lib/constants';
 import { getProducts } from 'lib/shopify';
+import { Suspense } from 'react';
 
 export const metadata = {
   title: 'Free Next.js Ecommerce template using Shopify headless integration',
@@ -16,7 +17,7 @@ export default async function ProductsPage({
 }: {
   searchParams?: { [key: string]: string | string[] | undefined };
 }) {
-  const { sort, q: searchValue } = searchParams as { [key: string]: string };
+  const { sort, q: searchValue } = (await searchParams) as { [key: string]: string };
   const { sortKey, reverse } = sorting.find((item) => item.slug === sort) || defaultSort;
 
   const products = await getProducts({ sortKey, reverse, query: searchValue });
@@ -26,7 +27,9 @@ export default async function ProductsPage({
   return (
     <>
       <div className="mb-2.5 flex justify-between">
-        <Search />
+        <Suspense fallback={null}>
+          <Search />
+        </Suspense>
         <FilterList list={sorting} />
       </div>
 

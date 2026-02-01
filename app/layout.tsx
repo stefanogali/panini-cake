@@ -6,11 +6,10 @@ import Footer from 'components/layout/footer';
 import MobileMenu from 'components/layout/mobile-menu';
 import { getMenu } from 'lib/shopify';
 import { ensureStartsWith } from 'lib/utils';
-import { revalidatePath } from 'next/cache';
 import { Gochi_Hand, Jost } from 'next/font/google';
 import Link from 'next/link';
 import MainLogo from 'public/logo/logo';
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 import './globals.css';
 
 const jost = Jost({ subsets: ['latin'], variable: '--main-font' });
@@ -47,10 +46,10 @@ export const metadata = {
     })
 };
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
-  //revalidate fecthes the data from the server and updates the cache. It should be global since layout is used through all the app.
-  revalidatePath('/', 'layout');
+// revalidate fresh data after 2 mins
+export const revalidate = 120;
 
+export default async function RootLayout({ children }: { children: ReactNode }) {
   // Get menu from shopify
   const { MAIN_MENU_NAME } = process.env;
   const menu = await getMenu(MAIN_MENU_NAME || '');
@@ -75,7 +74,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
                     className={clsx('max-w-20')}
                   />
                 </Link>
-                <MobileMenu menu={menu} />
+                <Suspense fallback={null}>
+                  <MobileMenu menu={menu} />
+                </Suspense>
               </div>
             </div>
             {children}

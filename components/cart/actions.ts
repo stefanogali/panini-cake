@@ -6,7 +6,8 @@ import { revalidateTag } from 'next/cache';
 import { cookies } from 'next/headers';
 
 export async function addItem(prevState: any, selectedVariantId: string | undefined) {
-  let cartId = cookies().get('cartId')?.value;
+  const cookieStore = await cookies();
+  let cartId = cookieStore.get('cartId')?.value;
   let cart;
 
   if (cartId) {
@@ -16,7 +17,7 @@ export async function addItem(prevState: any, selectedVariantId: string | undefi
   if (!cartId || !cart) {
     cart = await createCart();
     cartId = cart.id;
-    cookies().set('cartId', cartId);
+    cookieStore.set('cartId', cartId);
   }
 
   if (!selectedVariantId) {
@@ -25,14 +26,15 @@ export async function addItem(prevState: any, selectedVariantId: string | undefi
 
   try {
     await addToCart(cartId, [{ merchandiseId: selectedVariantId, quantity: 1 }]);
-    revalidateTag(TAGS.cart);
+    revalidateTag(TAGS.cart, 'max');
   } catch (e) {
     return 'Error adding item to cart';
   }
 }
 
 export async function removeItem(prevState: any, lineId: string) {
-  const cartId = cookies().get('cartId')?.value;
+  const cookieStore = await cookies();
+  const cartId = cookieStore.get('cartId')?.value;
 
   if (!cartId) {
     return 'Missing cart ID';
@@ -40,7 +42,7 @@ export async function removeItem(prevState: any, lineId: string) {
 
   try {
     await removeFromCart(cartId, [lineId]);
-    revalidateTag(TAGS.cart);
+    revalidateTag(TAGS.cart, 'max');
   } catch (e) {
     return 'Error removing item from cart';
   }
@@ -54,7 +56,8 @@ export async function updateItemQuantity(
     quantity: number;
   }
 ) {
-  const cartId = cookies().get('cartId')?.value;
+  const cookieStore = await cookies();
+  const cartId = cookieStore.get('cartId')?.value;
 
   if (!cartId) {
     return 'Missing cart ID';
@@ -65,7 +68,7 @@ export async function updateItemQuantity(
   try {
     if (quantity === 0) {
       await removeFromCart(cartId, [lineId]);
-      revalidateTag(TAGS.cart);
+      revalidateTag(TAGS.cart, 'max');
       return;
     }
 
@@ -76,7 +79,7 @@ export async function updateItemQuantity(
         quantity
       }
     ]);
-    revalidateTag(TAGS.cart);
+    revalidateTag(TAGS.cart, 'max');
   } catch (e) {
     return 'Error updating item quantity';
   }

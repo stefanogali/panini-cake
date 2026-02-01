@@ -3,7 +3,8 @@ import { cookies } from 'next/headers';
 import CartModal from './modal';
 
 export default async function Cart() {
-  const cartId = cookies().get('cartId')?.value;
+  const cookieStore = await cookies();
+  const cartId = cookieStore.get('cartId')?.value;
   let cart;
 
   if (cartId) {

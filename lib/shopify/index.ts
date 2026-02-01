@@ -295,8 +295,6 @@ export async function getCollectionProducts({
   const res = await shopifyFetch<ShopifyCollectionProductsOperation>({
     query: getCollectionProductsQuery,
     tags: [TAGS.collections, TAGS.products],
-    // commented out as it stops the build. Used revalidatePath in the layout instead.
-    // cache: 'no-store',
     variables: {
       handle: collection,
       reverse,
@@ -367,8 +365,6 @@ export async function getPage(handle: string, metafieldIds: MetafieldId[] = []):
 
   const res = await shopifyFetch<ShopifyPageOperation>({
     query: getPageQuery(metafieldIds),
-    // commented out as it stops the build. Used revalidatePath in the layout instead.
-    // cache: 'no-store',
     variables: { handle }
   });
 
@@ -377,8 +373,7 @@ export async function getPage(handle: string, metafieldIds: MetafieldId[] = []):
 
 export async function getPages(): Promise<Page[]> {
   const res = await shopifyFetch<ShopifyPagesOperation>({
-    query: getPagesQuery,
-    cache: 'no-store'
+    query: getPagesQuery
   });
 
   return removeEdgesAndNodes(res.body.data.pages);
@@ -419,8 +414,6 @@ export async function getProducts({
 }): Promise<Product[]> {
   const res = await shopifyFetch<ShopifyProductsOperation>({
     query: getProductsQuery,
-    // commented out as it stops the build. Used revalidatePath in the layout instead.
-    // cache: 'no-store',
     tags: [TAGS.products],
     variables: {
       query,
@@ -438,7 +431,8 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
   // otherwise it will continue to retry the request.
   const collectionWebhooks = ['collections/create', 'collections/delete', 'collections/update'];
   const productWebhooks = ['products/create', 'products/delete', 'products/update'];
-  const topic = headers().get('x-shopify-topic') || 'unknown';
+  const headersTopic = await headers();
+  const topic = headersTopic.get('x-shopify-topic') || 'unknown';
   const secret = req.nextUrl.searchParams.get('secret');
   const isCollectionUpdate = collectionWebhooks.includes(topic);
   const isProductUpdate = productWebhooks.includes(topic);
@@ -454,11 +448,11 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
   }
 
   if (isCollectionUpdate) {
-    revalidateTag(TAGS.collections);
+    revalidateTag(TAGS.collections, 'max');
   }
 
   if (isProductUpdate) {
-    revalidateTag(TAGS.products);
+    revalidateTag(TAGS.products, 'max');
   }
 
   return NextResponse.json({ status: 200, revalidated: true, now: Date.now() });

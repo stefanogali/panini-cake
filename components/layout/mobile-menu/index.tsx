@@ -15,6 +15,15 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
   const searchParams = useSearchParams();
   const cartContext = useContext(CartContext);
   const [isOpen, setIsOpen] = useState(false);
+  const routeKey = `${pathname}?${searchParams.toString()}`;
+  const [prevRouteKey, setPrevRouteKey] = useState(routeKey);
+
+  // Close the menu whenever the route or search params change.
+  if (routeKey !== prevRouteKey) {
+    setPrevRouteKey(routeKey);
+    setIsOpen(false);
+  }
+
   const openMobileMenu = () => setIsOpen(true);
   const closeMobileMenu = () => setIsOpen(false);
   const clickHandler = () => {
@@ -31,10 +40,6 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [isOpen]);
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname, searchParams]);
 
   return (
     <>

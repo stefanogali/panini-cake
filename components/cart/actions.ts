@@ -5,7 +5,7 @@ import { addToCart, createCart, getCart, removeFromCart, updateCart } from 'lib/
 import { revalidateTag } from 'next/cache';
 import { cookies } from 'next/headers';
 
-export async function addItem(prevState: any, selectedVariantId: string | undefined) {
+export async function addItem(prevState: unknown, selectedVariantId: string | undefined) {
   const cookieStore = await cookies();
   let cartId = cookieStore.get('cartId')?.value;
   let cart;
@@ -32,7 +32,7 @@ export async function addItem(prevState: any, selectedVariantId: string | undefi
   }
 }
 
-export async function removeItem(prevState: any, lineId: string) {
+export async function removeItem(prevState: unknown, lineId: string) {
   const cookieStore = await cookies();
   const cartId = cookieStore.get('cartId')?.value;
 
@@ -49,7 +49,7 @@ export async function removeItem(prevState: any, lineId: string) {
 }
 
 export async function updateItemQuantity(
-  prevState: any,
+  prevState: unknown,
   payload: {
     lineId: string;
     variantId: string;
